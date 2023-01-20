@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+:root {
+    /* Primary */
+
+    --Blue: hsl(246, 80%, 60%);
+    --Light-red-work: hsl(15, 100%, 70%);
+    --Soft-blue-play: hsl(195, 74%, 62%);
+    --Light-red-study: hsl(348, 100%, 68%);
+    --Lime-green-exercise: hsl(145, 58%, 55%);
+    --Violet-social: hsl(264, 64%, 52%);
+    --Soft-orange-self-care: hsl(43, 84%, 65%);
+
+    /* Neutral */
+
+    --Very-dark-blue: hsl(226, 43%, 10%);
+    --Dark-blue: hsl(235, 46%, 20%);
+    --Desaturated-blue: hsl(235, 45%, 61%);
+    --Pale-Blue: hsl(236, 100%, 87%);
+    --white: #fff;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--Very-dark-blue);
+    color: var(--white);
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+section.profile {
+    background-color: var(--Dark-blue);   
+    border-radius: 20px; 
+    overflow: hidden;
+}
+
+section.profile > div.person {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    gap: 20px;
+    background-color: var(--Blue);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+section.profile > div.person > img {
+    width: 70px;
+    border-radius: 100%;
+    border: 3px solid var(--white);
+}
+
+section.profile > div.person > div.identification > p {
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+section.profile > div.person > div.identification > h1 {
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+section.profile > div.active-time {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+}
+
+section.profile > div.active-time > button {
+    border: none;
+    background-color: transparent;
+    color: var(--Desaturated-blue);
+    font-size: 1rem;
+    font-weight: 500;
+
+    transition: .2s;
+}
+
+section.profile > div.active-time > button.active {
+    color: var(--white);
+}
+
+section.card > div.top {
+    height: 55px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    text-align: right;
+    overflow: hidden;
+}
+
+section.card > div.top > img {
+    height: 80px;
+    padding-right: 1rem;
+    margin-top: -.7rem;
+}
+
+section.card > div.bottom {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background-color: var(--Dark-blue);
+    padding: 30px;
+    border-radius: 20px;
+    margin-top: -1.2rem;
+}
+
+section.card > div.bottom > div.activity {
+    display: flex;
+    justify-content: space-between;
+}
+
+section.card > div.bottom > div.activity > h2 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+section.card > div.bottom > div.activity > span {
+    color: var(--Pale-Blue);
+}
+
+section.card > div.bottom > div.activity-time {
+    display: flex;
+    justify-content: space-between;
+}
+
+section.card > div.bottom > div.activity-time > p:first-child {
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+section.card > div.bottom > div.activity-time > p:last-child {
+    font-weight: 400;
+    font-size: 1rem;
+    color: var(--Pale-Blue);
+}
+
+section.card.work > div.top { background-color: var(--Light-red-work); }
+section.card.play > div.top { background-color: var(--Soft-blue-play); }
+section.card.study > div.top { background-color: var(--Light-red-study); }
+section.card.exercise > div.top { background-color: var(--Lime-green-exercise); }
+section.card.social > div.top { background-color: var(--Violet-social); }
+section.card.self-care > div.top { background-color: var(--Soft-orange-self-care); }
+
+@media screen and (min-width: 768px) {
+    main {
+        grid-template-columns: repeat(4, 1fr);
+        justify-content: center;
+        align-items: center;
+    }
+    section.profile {
+        grid-row: 1 / 3;
+    }
+    section.profile > div.person {
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 30px;
+        padding-bottom: 50px;
+        gap: 30px;
+    }   
+    section.profile > div.person > div.identification > h1 {
+        font-weight: 300;
+        font-size: 2.5rem;
+    }    
+    section.profile > div.active-time {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 30px;
+    }    
+    section.profile > div.active-time > button {
+        cursor: pointer;
+    }
+    section.profile > div.active-time > button:hover {
+        color: var(--white);
+    }    
+    section.card > div.top {
+        height: 60px;
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+        text-align: right;
+        overflow: hidden;
+    }    
+    section.card > div.top > img {
+        height: 4rem;
+        padding-right: 1rem;
+        margin-top: -.5rem;
+    }    
+    section.card > div.bottom {
+        position: relative;
+        flex-direction: column;
+        gap: 5px;
+        background-color: var(--Dark-blue);
+        padding: 30px;
+        border-radius: 20px;
+        cursor: pointer;
+    }    
+    section.card > div.bottom > div.activity > span:hover {
+        color: var(--white);
+        cursor: pointer;
+    }    
+    section.card > div.bottom > div.activity-time {
+        flex-direction: column;
+    }    
+    section.card > div.bottom > div.activity-time > p:first-child {
+        font-weight: 400;
+        font-size: 2.5rem;
+        padding: 10px 0;
+    }
+    section.card > div.bottom > div.tela {
+        display: none;
+        border-radius: 20px;
+        position: absolute;
+        background-color: var(--white);
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: .2;
+    }
+}
